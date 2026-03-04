@@ -2209,6 +2209,12 @@ app.get('/day', (req, res) => {
     res.status(200).send(WORDS[idx]);
 });
 
+app.get('/random', (req, res) => {
+  const num = Math.floor(Math.random() * 367);
+
+  res.status(200).send(WORDS[num]);
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
