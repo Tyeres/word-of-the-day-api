@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 3000;
 
 // 366 entries (index 0 => day 1)
 const WORDS = [
