@@ -2214,7 +2214,7 @@ app.get('/day', (req, res) => {
 });
 
 app.get('/random', (req, res) => {
-  const num = Math.floor(Math.random() * 367);
+  const num = Math.floor(Math.random() * 366);
 
   res.status(200).send(WORDS[num]);
 })
