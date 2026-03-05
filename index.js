@@ -1,6 +1,10 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
+
+app.use(cors()); // <-- enables cross-origin requests
 
 // 366 entries (index 0 => day 1)
 const WORDS = [
