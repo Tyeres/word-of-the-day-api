@@ -4,2221 +4,2221 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(cors()); // <-- enables cross-origin requests
+app.use(cors());
 
-// 366 entries (index 0 => day 1)
+// 366 real-word entries (index 0 => day 1)
 const WORDS = [
   {
-    "word": "aerologicism",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed aerologicism at length."
-  },
-  {
-    "word": "astrometryable",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will astrometryable the data before release."
-  },
-  {
-    "word": "biodynamicsized",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "jolly",
+    "definition": "full of happiness and cheer",
     "part_of_speech": "Adjective",
-    "example": "It was a biodynamicsized solution to a messy problem."
+    "example": "We had a jolly evening."
   },
   {
-    "word": "chronoformment",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated chronoformment this sprint."
-  },
-  {
-    "word": "cryptomindal",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "surface",
+    "definition": "the outer part or top layer of something",
     "part_of_speech": "Noun",
-    "example": "The project relies on cryptomindal."
+    "example": "The surface of the lake was calm."
   },
   {
-    "word": "cyberpulseation",
-    "definition": "to gen or refine something systematically.",
+    "word": "allow",
+    "definition": "to permit",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseation the data before release."
+    "example": "The rules allow one retake."
   },
   {
-    "word": "geothreading",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a geothreading solution to a messy problem."
-  },
-  {
-    "word": "hydronomyous",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyous and moved on."
-  },
-  {
-    "word": "infrascopeware",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed infrascopeware at length."
-  },
-  {
-    "word": "microverseor",
-    "definition": "to gen or refine something systematically.",
+    "word": "explore",
+    "definition": "to travel through or investigate",
     "part_of_speech": "Verb",
-    "example": "We will microverseor the data before release."
+    "example": "We want to explore the cave."
   },
   {
-    "word": "neobyteize",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a neobyteize design."
-  },
-  {
-    "word": "omnifieldity",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated omnifieldity this sprint."
-  },
-  {
-    "word": "photomatrixible",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed photomatrixible at length."
-  },
-  {
-    "word": "protovectorizer",
-    "definition": "to gen or refine something systematically.",
+    "word": "join",
+    "definition": "to connect or become a member of",
     "part_of_speech": "Verb",
-    "example": "We will protovectorizer the data before release."
+    "example": "Will you join the club?"
   },
   {
-    "word": "quantgraphness",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphness design."
-  },
-  {
-    "word": "retrogenic",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenic under pressure."
-  },
-  {
-    "word": "sociocraftology",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "language",
+    "definition": "a system of communication using words or signs",
     "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftology."
+    "example": "English is one language."
   },
   {
-    "word": "technocodeer",
-    "definition": "to gen or refine something systematically.",
+    "word": "basic",
+    "definition": "simple and essential",
+    "part_of_speech": "Adjective",
+    "example": "We learned the basic rules."
+  },
+  {
+    "word": "history",
+    "definition": "the study or record of past events",
+    "part_of_speech": "Noun",
+    "example": "She loves ancient history."
+  },
+  {
+    "word": "knowledge",
+    "definition": "facts, information, and understanding",
+    "part_of_speech": "Noun",
+    "example": "Knowledge grows through study."
+  },
+  {
+    "word": "accomplish",
+    "definition": "to successfully complete",
     "part_of_speech": "Verb",
-    "example": "We will technocodeer the data before release."
+    "example": "We can accomplish more by working together."
   },
   {
-    "word": "thermosenseive",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "curious",
+    "definition": "eager to know or learn",
     "part_of_speech": "Adjective",
-    "example": "It was a thermosenseive solution to a messy problem."
+    "example": "Children are naturally curious."
   },
   {
-    "word": "ultrasignalism",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalism and moved on."
-  },
-  {
-    "word": "aerologicable",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real aerologicable."
-  },
-  {
-    "word": "astrometryized",
-    "definition": "to gen or refine something systematically.",
+    "word": "contain",
+    "definition": "to hold within",
     "part_of_speech": "Verb",
-    "example": "They astrometryized their approach after feedback."
+    "example": "This bottle contains medicine."
   },
   {
-    "word": "biodynamicsment",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsment design."
-  },
-  {
-    "word": "chronoformal",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformal and moved on."
-  },
-  {
-    "word": "cryptomindation",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "contact",
+    "definition": "communication or a person you can reach",
     "part_of_speech": "Noun",
-    "example": "They discussed cryptomindation at length."
+    "example": "Send your contact information."
   },
   {
-    "word": "cyberpulseing",
-    "definition": "to gen or refine something systematically.",
+    "word": "design",
+    "definition": "a plan or arrangement for making something",
+    "part_of_speech": "Noun",
+    "example": "The bridge design was elegant."
+  },
+  {
+    "word": "climate",
+    "definition": "the usual weather of a place",
+    "part_of_speech": "Noun",
+    "example": "The desert climate is dry."
+  },
+  {
+    "word": "birth",
+    "definition": "the act of being born",
+    "part_of_speech": "Noun",
+    "example": "The birth of the foal surprised us."
+  },
+  {
+    "word": "rapid",
+    "definition": "very fast",
+    "part_of_speech": "Adjective",
+    "example": "The town saw rapid growth."
+  },
+  {
+    "word": "credit",
+    "definition": "praise or recognition for something done",
+    "part_of_speech": "Noun",
+    "example": "She deserves credit for the idea."
+  },
+  {
+    "word": "eager",
+    "definition": "very ready or excited to do something",
+    "part_of_speech": "Adjective",
+    "example": "He was eager to begin."
+  },
+  {
+    "word": "certain",
+    "definition": "sure or definite",
+    "part_of_speech": "Adjective",
+    "example": "I am certain of the date."
+  },
+  {
+    "word": "accept",
+    "definition": "to receive willingly",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseing the data before release."
+    "example": "She chose to accept the offer."
   },
   {
-    "word": "geothreadous",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreadous design."
-  },
-  {
-    "word": "hydronomyware",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyware this sprint."
-  },
-  {
-    "word": "infrascopeor",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed infrascopeor at length."
-  },
-  {
-    "word": "microverseize",
-    "definition": "to gen or refine something systematically.",
+    "word": "inform",
+    "definition": "to give knowledge to",
     "part_of_speech": "Verb",
-    "example": "They microverseize their approach after feedback."
+    "example": "Please inform us of any changes."
   },
   {
-    "word": "neobyteity",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly neobyteity."
-  },
-  {
-    "word": "omnifieldible",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldible and moved on."
-  },
-  {
-    "word": "photomatrixizer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "purpose",
+    "definition": "the reason for which something is done",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixizer."
+    "example": "What is the purpose of this tool?"
   },
   {
-    "word": "protovectorness",
-    "definition": "to gen or refine something systematically.",
+    "word": "bravely",
+    "definition": "in a courageous way",
+    "part_of_speech": "Adverb",
+    "example": "The child bravely entered the room."
+  },
+  {
+    "word": "flourish",
+    "definition": "to grow strongly or prosper",
     "part_of_speech": "Verb",
-    "example": "They protovectorness their approach after feedback."
+    "example": "Wildflowers flourish in spring."
   },
   {
-    "word": "quantgraphic",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly quantgraphic."
-  },
-  {
-    "word": "retrogenology",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it retrogenology and moved on."
-  },
-  {
-    "word": "sociocrafter",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real sociocrafter."
-  },
-  {
-    "word": "technocodeive",
-    "definition": "to gen or refine something systematically.",
+    "word": "honor",
+    "definition": "to show great respect for",
     "part_of_speech": "Verb",
-    "example": "They technocodeive their approach after feedback."
+    "example": "We honor those who served."
   },
   {
-    "word": "thermosenseism",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseism."
-  },
-  {
-    "word": "ultrasignalable",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded ultrasignalable under pressure."
-  },
-  {
-    "word": "aerologicized",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "The project relies on aerologicized."
-  },
-  {
-    "word": "astrometryment",
-    "definition": "to gen or refine something systematically.",
+    "word": "declare",
+    "definition": "to announce formally",
     "part_of_speech": "Verb",
-    "example": "We will astrometryment the data before release."
+    "example": "The court will declare its decision."
   },
   {
-    "word": "biodynamicsal",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a biodynamicsal solution to a messy problem."
-  },
-  {
-    "word": "chronoformation",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded chronoformation under pressure."
-  },
-  {
-    "word": "cryptominding",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "vision",
+    "definition": "the ability to see or imagine",
     "part_of_speech": "Noun",
-    "example": "Her work shows real cryptominding."
+    "example": "She had a clear vision for the project."
   },
   {
-    "word": "cyberpulseous",
-    "definition": "to gen or refine something systematically.",
+    "word": "article",
+    "definition": "a piece of writing in a publication",
+    "part_of_speech": "Noun",
+    "example": "I read an article about space."
+  },
+  {
+    "word": "choose",
+    "definition": "to select",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseous the data before release."
+    "example": "You may choose any seat."
   },
   {
-    "word": "geothreadware",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly geothreadware."
-  },
-  {
-    "word": "hydronomyor",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyor and moved on."
-  },
-  {
-    "word": "infrascopeize",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "level",
+    "definition": "a position or height relative to something",
     "part_of_speech": "Noun",
-    "example": "The project relies on infrascopeize."
+    "example": "Water reached knee level."
   },
   {
-    "word": "microverseity",
-    "definition": "to gen or refine something systematically.",
+    "word": "flexible",
+    "definition": "able to bend or adapt easily",
+    "part_of_speech": "Adjective",
+    "example": "The schedule is flexible."
+  },
+  {
+    "word": "budget",
+    "definition": "a plan for spending money",
+    "part_of_speech": "Noun",
+    "example": "We made a monthly budget."
+  },
+  {
+    "word": "truly",
+    "definition": "in a genuine way",
+    "part_of_speech": "Adverb",
+    "example": "I am truly grateful."
+  },
+  {
+    "word": "community",
+    "definition": "a group of people living or working together",
+    "part_of_speech": "Noun",
+    "example": "The community raised money for repairs."
+  },
+  {
+    "word": "carefully",
+    "definition": "with caution and attention",
+    "part_of_speech": "Adverb",
+    "example": "He carefully stacked the plates."
+  },
+  {
+    "word": "judgment",
+    "definition": "an opinion formed after thought",
+    "part_of_speech": "Noun",
+    "example": "Use good judgment online."
+  },
+  {
+    "word": "steadily",
+    "definition": "in a regular stable way",
+    "part_of_speech": "Adverb",
+    "example": "The temperature steadily increased."
+  },
+  {
+    "word": "value",
+    "definition": "importance, usefulness, or worth",
+    "part_of_speech": "Noun",
+    "example": "This lesson has real value."
+  },
+  {
+    "word": "abrupt",
+    "definition": "sudden and unexpected",
+    "part_of_speech": "Adjective",
+    "example": "The car made an abrupt stop."
+  },
+  {
+    "word": "formal",
+    "definition": "following established rules or customs",
+    "part_of_speech": "Adjective",
+    "example": "He wore formal clothes."
+  },
+  {
+    "word": "effort",
+    "definition": "the use of energy to do something",
+    "part_of_speech": "Noun",
+    "example": "Success takes effort."
+  },
+  {
+    "word": "benefit",
+    "definition": "an advantage or helpful result",
+    "part_of_speech": "Noun",
+    "example": "Exercise has many health benefits."
+  },
+  {
+    "word": "strength",
+    "definition": "physical power or inner resilience",
+    "part_of_speech": "Noun",
+    "example": "Her greatest strength is patience."
+  },
+  {
+    "word": "hope",
+    "definition": "a feeling of expectation and desire",
+    "part_of_speech": "Noun",
+    "example": "Hope kept them moving."
+  },
+  {
+    "word": "explain",
+    "definition": "to make clear",
     "part_of_speech": "Verb",
-    "example": "Try to microverseity the process end-to-end."
+    "example": "Can you explain the process?"
   },
   {
-    "word": "neobyteible",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a neobyteible design."
-  },
-  {
-    "word": "omnifieldizer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded omnifieldizer under pressure."
-  },
-  {
-    "word": "photomatrixness",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "mystery",
+    "definition": "something difficult to explain or understand",
     "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixness."
+    "example": "The disappearance remained a mystery."
   },
   {
-    "word": "protovectoric",
-    "definition": "to gen or refine something systematically.",
+    "word": "heal",
+    "definition": "to make healthy again",
     "part_of_speech": "Verb",
-    "example": "They protovectoric their approach after feedback."
+    "example": "Time can heal emotional wounds."
   },
   {
-    "word": "quantgraphology",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly quantgraphology."
-  },
-  {
-    "word": "retrogener",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated retrogener this sprint."
-  },
-  {
-    "word": "sociocraftive",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "system",
+    "definition": "a set of connected parts working together",
     "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftive."
+    "example": "The computer system crashed."
   },
   {
-    "word": "technocodeism",
-    "definition": "to gen or refine something systematically.",
+    "word": "emotion",
+    "definition": "a strong feeling",
+    "part_of_speech": "Noun",
+    "example": "Fear is a powerful emotion."
+  },
+  {
+    "word": "bold",
+    "definition": "brave and confident",
+    "part_of_speech": "Adjective",
+    "example": "She made a bold decision."
+  },
+  {
+    "word": "ache",
+    "definition": "to feel continuous pain",
     "part_of_speech": "Verb",
-    "example": "Try to technocodeism the process end-to-end."
+    "example": "My legs ache after the long hike."
   },
   {
-    "word": "thermosenseable",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "compare",
+    "definition": "to examine similarities and differences",
+    "part_of_speech": "Verb",
+    "example": "Let's compare the two options."
+  },
+  {
+    "word": "expect",
+    "definition": "to think something will happen",
+    "part_of_speech": "Verb",
+    "example": "I expect rain later."
+  },
+  {
+    "word": "swift",
+    "definition": "moving very fast",
     "part_of_speech": "Adjective",
-    "example": "It was a thermosenseable solution to a messy problem."
+    "example": "A swift current carried the leaf away."
   },
   {
-    "word": "ultrasignalized",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated ultrasignalized this sprint."
-  },
-  {
-    "word": "aerologicment",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "friendship",
+    "definition": "a close relationship between friends",
     "part_of_speech": "Noun",
-    "example": "The project relies on aerologicment."
+    "example": "Their friendship lasted years."
+  },
+  {
+    "word": "decorate",
+    "definition": "to make more attractive",
+    "part_of_speech": "Verb",
+    "example": "They decorate the room for holidays."
+  },
+  {
+    "word": "comparison",
+    "definition": "the act of noting similarities and differences",
+    "part_of_speech": "Noun",
+    "example": "The comparison was useful."
+  },
+  {
+    "word": "change",
+    "definition": "to make or become different",
+    "part_of_speech": "Verb",
+    "example": "Weather can change quickly."
+  },
+  {
+    "word": "fascinate",
+    "definition": "to strongly interest",
+    "part_of_speech": "Verb",
+    "example": "Stars fascinate her."
+  },
+  {
+    "word": "clearly",
+    "definition": "in an easy-to-understand way",
+    "part_of_speech": "Adverb",
+    "example": "He clearly explained the solution."
   },
   {
     "word": "mathematics",
-    "definition": "the abstract science of number, quantity, and space, either as abstract concepts (pure mathematics), or as applied to other disciplines such as physics and engineering (applied mathematics)",
+    "definition": "the abstract science of number, quantity, and space",
     "part_of_speech": "Noun",
-    "example": "He does not like learning about mathematics."
+    "example": "She enjoys studying mathematics."
   },
   {
-    "word": "biodynamicsation",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsation design."
+    "word": "aspect",
+    "definition": "a particular part or feature",
+    "part_of_speech": "Noun",
+    "example": "Safety is one aspect of the plan."
   },
   {
-    "word": "chronoforming",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded chronoforming under pressure."
+    "word": "craft",
+    "definition": "a skill in making things well",
+    "part_of_speech": "Noun",
+    "example": "Woodworking is an old craft."
   },
   {
-    "word": "cryptomindous",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "arrival",
+    "definition": "the act of reaching a place",
     "part_of_speech": "Noun",
-    "example": "They discussed cryptomindous at length."
+    "example": "We waited for the train's arrival."
   },
   {
-    "word": "cyberpulseware",
-    "definition": "to gen or refine something systematically.",
+    "word": "kneel",
+    "definition": "to go down on one's knees",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseware the data before release."
+    "example": "He knelt beside the bench."
   },
   {
-    "word": "geothreador",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreador design."
+    "word": "decline",
+    "definition": "to refuse politely or decrease",
+    "part_of_speech": "Verb",
+    "example": "He chose to decline the invitation."
   },
   {
-    "word": "hydronomyize",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyize and moved on."
+    "word": "precise",
+    "definition": "exact and accurate",
+    "part_of_speech": "Adjective",
+    "example": "Use precise measurements."
   },
   {
-    "word": "infrascopeity",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "choice",
+    "definition": "an act of selecting",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeity."
+    "example": "That was a difficult choice."
   },
   {
-    "word": "microverseible",
-    "definition": "to gen or refine something systematically.",
+    "word": "hesitate",
+    "definition": "to pause because of uncertainty",
     "part_of_speech": "Verb",
-    "example": "They microverseible their approach after feedback."
+    "example": "Do not hesitate to ask."
   },
   {
-    "word": "neobyteizer",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a neobyteizer solution to a messy problem."
+    "word": "discuss",
+    "definition": "to talk about",
+    "part_of_speech": "Verb",
+    "example": "We need to discuss the schedule."
   },
   {
-    "word": "omnifieldness",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "suddenly",
+    "definition": "quickly and unexpectedly",
     "part_of_speech": "Adverb",
-    "example": "He responded omnifieldness under pressure."
+    "example": "The lights suddenly went out."
   },
   {
-    "word": "photomatrixic",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixic."
+    "word": "freely",
+    "definition": "without restriction",
+    "part_of_speech": "Adverb",
+    "example": "The information is freely available online."
   },
   {
-    "word": "protovectorology",
-    "definition": "to gen or refine something systematically.",
+    "word": "develop",
+    "definition": "to grow or improve over time",
     "part_of_speech": "Verb",
-    "example": "We will protovectorology the data before release."
+    "example": "Children develop language early."
   },
   {
-    "word": "quantgrapher",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgrapher solution to a messy problem."
+    "word": "service",
+    "definition": "helpful work done for others or a system that provides it",
+    "part_of_speech": "Noun",
+    "example": "The restaurant offers good service."
+  },
+  {
+    "word": "eagerly",
+    "definition": "with excitement or interest",
+    "part_of_speech": "Adverb",
+    "example": "The children eagerly opened the gifts."
   },
   {
-    "word": "retrogenive",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "gratefully",
+    "definition": "with appreciation",
     "part_of_speech": "Adverb",
-    "example": "He responded retrogenive under pressure."
+    "example": "He gratefully accepted the help."
   },
   {
-    "word": "sociocraftism",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "thought",
+    "definition": "an idea or act of thinking",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftism."
+    "example": "That thought stayed with me."
   },
   {
-    "word": "technocodeable",
-    "definition": "to gen or refine something systematically.",
+    "word": "obvious",
+    "definition": "easy to see or understand",
+    "part_of_speech": "Adjective",
+    "example": "The answer seems obvious now."
+  },
+  {
+    "word": "identify",
+    "definition": "to recognize or name",
     "part_of_speech": "Verb",
-    "example": "Try to technocodeable the process end-to-end."
+    "example": "Can you identify the song?"
   },
   {
-    "word": "thermosenseized",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "complex",
+    "definition": "made of many connected parts; not simple",
     "part_of_speech": "Adjective",
-    "example": "They chose a thermosenseized design."
+    "example": "The machine is complex."
   },
   {
-    "word": "ultrasignalment",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded ultrasignalment under pressure."
+    "word": "nation",
+    "definition": "a large group of people forming a country",
+    "part_of_speech": "Noun",
+    "example": "The nation voted today."
   },
   {
-    "word": "aerological",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "ability",
+    "definition": "the power or skill to do something",
     "part_of_speech": "Noun",
-    "example": "Her work shows real aerological."
+    "example": "Her ability to stay calm impressed everyone."
   },
   {
-    "word": "astrometryation",
-    "definition": "to gen or refine something systematically.",
+    "word": "appear",
+    "definition": "to come into view",
     "part_of_speech": "Verb",
-    "example": "Try to astrometryation the process end-to-end."
+    "example": "A rainbow may appear after rain."
   },
   {
-    "word": "biodynamicsing",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "careful",
+    "definition": "showing caution and attention",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly biodynamicsing."
+    "example": "Be careful with the glass."
   },
   {
-    "word": "chronoformous",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformous and moved on."
+    "word": "agree",
+    "definition": "to have the same opinion",
+    "part_of_speech": "Verb",
+    "example": "We agree on the main idea."
   },
   {
-    "word": "cryptomindware",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "device",
+    "definition": "a tool or piece of equipment",
     "part_of_speech": "Noun",
-    "example": "They discussed cryptomindware at length."
+    "example": "This device measures pressure."
   },
   {
-    "word": "cyberpulseor",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to cyberpulseor the process end-to-end."
+    "word": "smoothly",
+    "definition": "without problems",
+    "part_of_speech": "Adverb",
+    "example": "The presentation went smoothly."
   },
   {
-    "word": "geothreadize",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreadize design."
+    "word": "embrace",
+    "definition": "to hold closely or accept eagerly",
+    "part_of_speech": "Verb",
+    "example": "They chose to embrace change."
   },
   {
-    "word": "hydronomyity",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyity this sprint."
+    "word": "attend",
+    "definition": "to be present at",
+    "part_of_speech": "Verb",
+    "example": "Many students attend the lecture."
   },
   {
-    "word": "infrascopeible",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "danger",
+    "definition": "the possibility of harm",
     "part_of_speech": "Noun",
-    "example": "They discussed infrascopeible at length."
+    "example": "The warning sign marked danger."
   },
   {
-    "word": "microverseizer",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will microverseizer the data before release."
+    "word": "honest",
+    "definition": "truthful and sincere",
+    "part_of_speech": "Adjective",
+    "example": "She gave an honest answer."
   },
   {
-    "word": "neobyteness",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a neobyteness design."
+    "word": "advice",
+    "definition": "guidance or recommendations about what to do",
+    "part_of_speech": "Noun",
+    "example": "My grandfather gave wise advice."
   },
   {
-    "word": "omnifieldic",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated omnifieldic this sprint."
+    "word": "angle",
+    "definition": "the space between two lines or surfaces",
+    "part_of_speech": "Noun",
+    "example": "Draw a right angle here."
   },
   {
-    "word": "photomatrixology",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "harmony",
+    "definition": "agreement or pleasing arrangement",
     "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixology."
+    "example": "The choir sang in harmony."
   },
   {
-    "word": "protovectorer",
-    "definition": "to gen or refine something systematically.",
+    "word": "continue",
+    "definition": "to keep going",
     "part_of_speech": "Verb",
-    "example": "They protovectorer their approach after feedback."
+    "example": "The show will continue after the break."
   },
   {
-    "word": "quantgraphive",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphive design."
+    "word": "invite",
+    "definition": "to ask someone to come",
+    "part_of_speech": "Verb",
+    "example": "They invited us to dinner."
   },
   {
-    "word": "retrogenism",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it retrogenism and moved on."
+    "word": "energy",
+    "definition": "the power to do work or be active",
+    "part_of_speech": "Noun",
+    "example": "Children have plenty of energy."
   },
   {
-    "word": "sociocraftable",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftable."
+    "word": "brief",
+    "definition": "lasting only a short time",
+    "part_of_speech": "Adjective",
+    "example": "We had a brief chat."
   },
   {
-    "word": "technocodeized",
-    "definition": "to gen or refine something systematically.",
+    "word": "answer",
+    "definition": "to respond to a question",
     "part_of_speech": "Verb",
-    "example": "Try to technocodeized the process end-to-end."
+    "example": "Please answer honestly."
   },
   {
-    "word": "thermosensement",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosensement."
+    "word": "outcome",
+    "definition": "the final result",
+    "part_of_speech": "Noun",
+    "example": "No one could predict the outcome."
   },
   {
-    "word": "ultrasignalal",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded ultrasignalal under pressure."
+    "word": "season",
+    "definition": "one of the divisions of the year",
+    "part_of_speech": "Noun",
+    "example": "Autumn is my favorite season."
   },
   {
-    "word": "aerologication",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "journey",
+    "definition": "an act of traveling from one place to another",
     "part_of_speech": "Noun",
-    "example": "They discussed aerologication at length."
+    "example": "The journey took two days."
   },
   {
-    "word": "astrometrying",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "They astrometrying their approach after feedback."
+    "word": "discovery",
+    "definition": "the act of finding something new",
+    "part_of_speech": "Noun",
+    "example": "The discovery excited scientists."
   },
   {
-    "word": "biodynamicsous",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsous design."
+    "word": "failure",
+    "definition": "lack of success",
+    "part_of_speech": "Noun",
+    "example": "The launch was a failure."
   },
   {
-    "word": "chronoformware",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformware and moved on."
+    "word": "faithful",
+    "definition": "loyal and dependable",
+    "part_of_speech": "Adjective",
+    "example": "The dog was faithful for years."
   },
   {
-    "word": "cryptomindor",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed cryptomindor at length."
+    "word": "destroy",
+    "definition": "to ruin completely",
+    "part_of_speech": "Verb",
+    "example": "Fire can destroy a forest."
   },
   {
-    "word": "cyberpulseize",
-    "definition": "to gen or refine something systematically.",
+    "word": "cross",
+    "definition": "to go from one side to another",
     "part_of_speech": "Verb",
-    "example": "Try to cyberpulseize the process end-to-end."
+    "example": "Look both ways before you cross."
   },
   {
-    "word": "geothreadity",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a geothreadity solution to a messy problem."
+    "word": "boldly",
+    "definition": "in a confident and daring way",
+    "part_of_speech": "Adverb",
+    "example": "She boldly proposed a new idea."
   },
   {
-    "word": "hydronomyible",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyible and moved on."
+    "word": "ask",
+    "definition": "to request information",
+    "part_of_speech": "Verb",
+    "example": "He asked a thoughtful question."
   },
   {
-    "word": "infrascopeizer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "liberty",
+    "definition": "freedom from unjust control",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeizer."
+    "example": "They fought for liberty."
   },
   {
-    "word": "microverseness",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to microverseness the process end-to-end."
+    "word": "conclusion",
+    "definition": "the end or final decision of something",
+    "part_of_speech": "Noun",
+    "example": "We reached the same conclusion."
   },
   {
-    "word": "neobyteic",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly neobyteic."
+    "word": "company",
+    "definition": "a business organization",
+    "part_of_speech": "Noun",
+    "example": "The company hired more staff."
   },
   {
-    "word": "omnifieldology",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded omnifieldology under pressure."
+    "word": "build",
+    "definition": "to make by putting parts together",
+    "part_of_speech": "Verb",
+    "example": "They plan to build a deck."
   },
   {
-    "word": "photomatrixer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixer."
+    "word": "arrive",
+    "definition": "to reach a place",
+    "part_of_speech": "Verb",
+    "example": "The package should arrive today."
   },
   {
-    "word": "protovectorive",
-    "definition": "to gen or refine something systematically.",
+    "word": "confirm",
+    "definition": "to verify as true",
     "part_of_speech": "Verb",
-    "example": "We will protovectorive the data before release."
+    "example": "Please confirm your reservation."
   },
   {
-    "word": "quantgraphism",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "familiar",
+    "definition": "well known from experience",
     "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphism design."
-  },
-  {
-    "word": "retrogenable",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated retrogenable this sprint."
+    "example": "Her face looked familiar."
   },
   {
-    "word": "sociocraftized",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "impression",
+    "definition": "an effect or opinion formed",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftized."
+    "example": "He made a good impression."
   },
   {
-    "word": "technocodement",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will technocodement the data before release."
+    "word": "environment",
+    "definition": "the surroundings or conditions around something",
+    "part_of_speech": "Noun",
+    "example": "Plants respond to their environment."
   },
   {
-    "word": "thermosenseal",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a thermosenseal design."
+    "word": "risk",
+    "definition": "the possibility of danger or loss",
+    "part_of_speech": "Noun",
+    "example": "Driving fast increases risk."
   },
   {
-    "word": "ultrasignalation",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded ultrasignalation under pressure."
+    "word": "lesson",
+    "definition": "something learned or a period of teaching",
+    "part_of_speech": "Noun",
+    "example": "The accident taught a lesson."
   },
   {
-    "word": "aerologicing",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "The project relies on aerologicing."
+    "word": "deliver",
+    "definition": "to bring to the right place",
+    "part_of_speech": "Verb",
+    "example": "The driver will deliver the order."
   },
   {
-    "word": "astrometryous",
-    "definition": "to gen or refine something systematically.",
+    "word": "concern",
+    "definition": "to relate to or worry",
     "part_of_speech": "Verb",
-    "example": "They astrometryous their approach after feedback."
+    "example": "The report concerns public safety."
   },
   {
-    "word": "biodynamicsware",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "vivid",
+    "definition": "bright, clear, and full of detail",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly biodynamicsware."
+    "example": "She gave a vivid description."
   },
   {
-    "word": "chronoformor",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformor and moved on."
+    "word": "create",
+    "definition": "to make something new",
+    "part_of_speech": "Verb",
+    "example": "Artists create beauty."
   },
   {
-    "word": "cryptomindize",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "secret",
+    "definition": "something kept hidden or unknown",
     "part_of_speech": "Noun",
-    "example": "The project relies on cryptomindize."
+    "example": "He told me a secret."
   },
   {
-    "word": "cyberpulseity",
-    "definition": "to gen or refine something systematically.",
+    "word": "fade",
+    "definition": "to lose brightness or strength",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseity the data before release."
+    "example": "The music began to fade."
   },
   {
-    "word": "geothreadible",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a geothreadible solution to a messy problem."
+    "word": "experience",
+    "definition": "knowledge gained from doing or living through something",
+    "part_of_speech": "Noun",
+    "example": "Experience teaches patience."
   },
   {
-    "word": "hydronomyizer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyizer this sprint."
+    "word": "polite",
+    "definition": "showing good manners",
+    "part_of_speech": "Adjective",
+    "example": "Please be polite to guests."
   },
   {
-    "word": "infrascopeness",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "importance",
+    "definition": "the quality of being significant",
     "part_of_speech": "Noun",
-    "example": "They discussed infrascopeness at length."
+    "example": "Safety is of great importance."
   },
   {
-    "word": "microverseic",
-    "definition": "to gen or refine something systematically.",
+    "word": "combine",
+    "definition": "to join into one",
     "part_of_speech": "Verb",
-    "example": "They microverseic their approach after feedback."
+    "example": "Heat and pressure combine the materials."
   },
   {
-    "word": "neobyteology",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly neobyteology."
+    "word": "earn",
+    "definition": "to receive through work",
+    "part_of_speech": "Verb",
+    "example": "She earns extra money tutoring."
   },
   {
-    "word": "omnifielder",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated omnifielder this sprint."
+    "word": "income",
+    "definition": "money received regularly",
+    "part_of_speech": "Noun",
+    "example": "Her income increased this year."
   },
   {
-    "word": "photomatrixive",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "ideal",
+    "definition": "perfect or best for a purpose",
+    "part_of_speech": "Adjective",
+    "example": "This room is ideal for study."
+  },
+  {
+    "word": "courage",
+    "definition": "the ability to face fear",
     "part_of_speech": "Noun",
-    "example": "They discussed photomatrixive at length."
+    "example": "It took courage to speak up."
   },
   {
-    "word": "protovectorism",
-    "definition": "to gen or refine something systematically.",
+    "word": "glance",
+    "definition": "to look quickly",
     "part_of_speech": "Verb",
-    "example": "Try to protovectorism the process end-to-end."
+    "example": "She glanced at the clock."
   },
   {
-    "word": "quantgraphable",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "elastic",
+    "definition": "able to stretch and return to shape",
     "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphable design."
+    "example": "Rubber bands are elastic."
   },
   {
-    "word": "retrogenized",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenized under pressure."
+    "word": "attach",
+    "definition": "to fasten to something",
+    "part_of_speech": "Verb",
+    "example": "Attach the file to your email."
+  },
+  {
+    "word": "expand",
+    "definition": "to become larger",
+    "part_of_speech": "Verb",
+    "example": "The company plans to expand overseas."
   },
   {
-    "word": "sociocraftment",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "delight",
+    "definition": "great pleasure",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftment."
+    "example": "The gift was a delight."
   },
   {
-    "word": "technocodeal",
-    "definition": "to gen or refine something systematically.",
+    "word": "examine",
+    "definition": "to inspect closely",
     "part_of_speech": "Verb",
-    "example": "We will technocodeal the data before release."
+    "example": "Doctors examine the patient."
   },
   {
-    "word": "thermosenseation",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "humble",
+    "definition": "not proud or arrogant",
     "part_of_speech": "Adjective",
-    "example": "It was a thermosenseation solution to a messy problem."
+    "example": "He remained humble after winning."
   },
   {
-    "word": "ultrasignaling",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated ultrasignaling this sprint."
+    "word": "approve",
+    "definition": "to officially agree to",
+    "part_of_speech": "Verb",
+    "example": "The board approved the budget."
   },
   {
-    "word": "aerologicous",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "course",
+    "definition": "a path or a series of lessons",
     "part_of_speech": "Noun",
-    "example": "The project relies on aerologicous."
+    "example": "He changed the course of the river."
   },
   {
-    "word": "astrometryware",
-    "definition": "to gen or refine something systematically.",
+    "word": "consider",
+    "definition": "to think carefully about",
     "part_of_speech": "Verb",
-    "example": "We will astrometryware the data before release."
+    "example": "We will consider every option."
   },
   {
-    "word": "biodynamicsor",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a biodynamicsor solution to a messy problem."
+    "word": "forgive",
+    "definition": "to stop feeling anger toward",
+    "part_of_speech": "Verb",
+    "example": "Can you forgive the mistake?"
   },
   {
-    "word": "chronoformize",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformize and moved on."
+    "word": "subtle",
+    "definition": "delicate and not obvious",
+    "part_of_speech": "Adjective",
+    "example": "The flavor has a subtle sweetness."
   },
   {
-    "word": "cryptomindity",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "goal",
+    "definition": "something aimed at or desired",
     "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindity."
+    "example": "My goal is to graduate early."
   },
   {
-    "word": "cyberpulseible",
-    "definition": "to gen or refine something systematically.",
+    "word": "feature",
+    "definition": "to include as an important part",
     "part_of_speech": "Verb",
-    "example": "They cyberpulseible their approach after feedback."
+    "example": "The article will feature local artists."
+  },
+  {
+    "word": "industry",
+    "definition": "economic activity involving production or services",
+    "part_of_speech": "Noun",
+    "example": "The steel industry grew quickly."
   },
   {
-    "word": "geothreadizer",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "reliable",
+    "definition": "able to be trusted or depended on",
     "part_of_speech": "Adjective",
-    "example": "It was a geothreadizer solution to a messy problem."
+    "example": "This car is reliable."
   },
   {
-    "word": "hydronomyness",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyness this sprint."
+    "word": "belong",
+    "definition": "to be the property of",
+    "part_of_speech": "Verb",
+    "example": "Those keys belong to Maya."
   },
   {
-    "word": "infrascopeic",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "routine",
+    "definition": "a regular way of doing things",
     "part_of_speech": "Noun",
-    "example": "The project relies on infrascopeic."
+    "example": "Exercise became part of her routine."
   },
   {
-    "word": "microverseology",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "They microverseology their approach after feedback."
+    "word": "idea",
+    "definition": "a thought or suggestion",
+    "part_of_speech": "Noun",
+    "example": "Your idea could work."
   },
   {
-    "word": "neobyteer",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "equal",
+    "definition": "the same in amount or value",
     "part_of_speech": "Adjective",
-    "example": "It was a neobyteer solution to a messy problem."
+    "example": "All sides are equal."
   },
   {
-    "word": "omnifieldive",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded omnifieldive under pressure."
+    "word": "chance",
+    "definition": "a possibility of something happening",
+    "part_of_speech": "Noun",
+    "example": "There is a good chance of snow."
   },
   {
-    "word": "photomatrixism",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "habit",
+    "definition": "a regular behavior",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixism."
+    "example": "Reading at night became a habit."
   },
   {
-    "word": "protovectorable",
-    "definition": "to gen or refine something systematically.",
+    "word": "contribute",
+    "definition": "to give or add something",
     "part_of_speech": "Verb",
-    "example": "They protovectorable their approach after feedback."
+    "example": "Many people contribute to the fund."
   },
   {
-    "word": "quantgraphized",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "faint",
+    "definition": "hard to see, hear, or feel",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly quantgraphized."
+    "example": "A faint smell of smoke remained."
   },
   {
-    "word": "retrogenment",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated retrogenment this sprint."
+    "word": "enforce",
+    "definition": "to make sure rules are obeyed",
+    "part_of_speech": "Verb",
+    "example": "Police enforce traffic laws."
   },
   {
-    "word": "sociocraftal",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "feeling",
+    "definition": "an emotion or sense of touch",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftal."
+    "example": "I had a strange feeling about it."
   },
   {
-    "word": "technocodeation",
-    "definition": "to gen or refine something systematically.",
+    "word": "behave",
+    "definition": "to act in a certain way",
     "part_of_speech": "Verb",
-    "example": "They technocodeation their approach after feedback."
+    "example": "The children behaved well."
   },
   {
-    "word": "thermosenseing",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a thermosenseing solution to a messy problem."
+    "word": "alert",
+    "definition": "to warn or notify",
+    "part_of_speech": "Verb",
+    "example": "Please alert me if the schedule changes."
   },
   {
-    "word": "ultrasignalous",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated ultrasignalous this sprint."
+    "word": "hide",
+    "definition": "to keep out of sight",
+    "part_of_speech": "Verb",
+    "example": "Children love to hide behind curtains."
   },
   {
-    "word": "aerologicware",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "clever",
+    "definition": "quick to understand or learn",
+    "part_of_speech": "Adjective",
+    "example": "The clever fox escaped."
+  },
+  {
+    "word": "theory",
+    "definition": "an explanation supported by evidence",
     "part_of_speech": "Noun",
-    "example": "They discussed aerologicware at length."
+    "example": "The theory changed modern physics."
   },
   {
-    "word": "astrometryor",
-    "definition": "to gen or refine something systematically.",
+    "word": "establish",
+    "definition": "to set up firmly",
     "part_of_speech": "Verb",
-    "example": "We will astrometryor the data before release."
+    "example": "They hope to establish trust."
   },
   {
-    "word": "biodynamicsize",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsize design."
+    "word": "achievement",
+    "definition": "something done successfully through effort",
+    "part_of_speech": "Noun",
+    "example": "Graduation was a major achievement."
   },
   {
-    "word": "chronoformity",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated chronoformity this sprint."
+    "word": "cooperate",
+    "definition": "to work together",
+    "part_of_speech": "Verb",
+    "example": "Teams must cooperate to succeed."
   },
   {
-    "word": "cryptomindible",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "shadow",
+    "definition": "a dark area caused by blocked light",
     "part_of_speech": "Noun",
-    "example": "The project relies on cryptomindible."
+    "example": "The tree cast a long shadow."
   },
   {
-    "word": "cyberpulseizer",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "They cyberpulseizer their approach after feedback."
+    "word": "respect",
+    "definition": "admiration shown toward someone or something",
+    "part_of_speech": "Noun",
+    "example": "She earned our respect."
   },
   {
-    "word": "geothreadness",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly geothreadness."
+    "word": "interest",
+    "definition": "curiosity or concern about something",
+    "part_of_speech": "Noun",
+    "example": "He has an interest in coding."
   },
   {
-    "word": "hydronomyic",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyic and moved on."
+    "word": "attitude",
+    "definition": "a way of thinking or feeling",
+    "part_of_speech": "Noun",
+    "example": "A positive attitude helps."
   },
   {
-    "word": "infrascopeology",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "science",
+    "definition": "the study of the natural world through observation and experiment",
     "part_of_speech": "Noun",
-    "example": "The project relies on infrascopeology."
+    "example": "Science helps explain nature."
   },
   {
-    "word": "microverseer",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to microverseer the process end-to-end."
+    "word": "world",
+    "definition": "the earth and all life on it",
+    "part_of_speech": "Noun",
+    "example": "The world feels smaller online."
   },
   {
-    "word": "neobyteive",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a neobyteive solution to a messy problem."
+    "word": "decide",
+    "definition": "to make a choice",
+    "part_of_speech": "Verb",
+    "example": "She cannot decide between the two."
   },
   {
-    "word": "omnifieldism",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded omnifieldism under pressure."
+    "word": "fragile",
+    "definition": "easily broken or damaged",
+    "part_of_speech": "Adjective",
+    "example": "Handle the fragile vase carefully."
   },
   {
-    "word": "photomatrixable",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixable."
+    "word": "able",
+    "definition": "having the power or skill to do something",
+    "part_of_speech": "Adjective",
+    "example": "She is able to solve tough problems."
   },
   {
-    "word": "protovectorized",
-    "definition": "to gen or refine something systematically.",
+    "word": "increase",
+    "definition": "to make greater",
     "part_of_speech": "Verb",
-    "example": "They protovectorized their approach after feedback."
+    "example": "Exercise can increase stamina."
   },
   {
-    "word": "quantgraphment",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "lively",
+    "definition": "full of energy and activity",
     "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphment design."
+    "example": "The market was lively."
   },
   {
-    "word": "retrogenal",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenal under pressure."
+    "word": "direction",
+    "definition": "a course or path along which something moves",
+    "part_of_speech": "Noun",
+    "example": "We walked in the wrong direction."
   },
   {
-    "word": "sociocraftation",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "command",
+    "definition": "an order or instruction",
     "part_of_speech": "Noun",
-    "example": "They discussed sociocraftation at length."
+    "example": "The captain gave the command."
   },
   {
-    "word": "technocodeing",
-    "definition": "to gen or refine something systematically.",
+    "word": "generate",
+    "definition": "to produce",
     "part_of_speech": "Verb",
-    "example": "We will technocodeing the data before release."
+    "example": "Solar panels generate electricity."
   },
   {
-    "word": "thermosenseous",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a thermosenseous design."
+    "word": "debate",
+    "definition": "a formal discussion with opposing views",
+    "part_of_speech": "Noun",
+    "example": "The debate lasted an hour."
   },
   {
-    "word": "ultrasignalware",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalware and moved on."
+    "word": "proud",
+    "definition": "feeling pleasure from achievement",
+    "part_of_speech": "Adjective",
+    "example": "Her parents were proud."
   },
   {
-    "word": "aerologicor",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed aerologicor at length."
+    "word": "assist",
+    "definition": "to help",
+    "part_of_speech": "Verb",
+    "example": "The nurse will assist the doctor."
   },
   {
-    "word": "astrometryize",
-    "definition": "to gen or refine something systematically.",
+    "word": "calculate",
+    "definition": "to determine by using math",
     "part_of_speech": "Verb",
-    "example": "Try to astrometryize the process end-to-end."
+    "example": "You should calculate the total cost."
   },
   {
-    "word": "biodynamicsity",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsity design."
+    "word": "decision",
+    "definition": "a choice made after thought",
+    "part_of_speech": "Noun",
+    "example": "That decision changed everything."
   },
   {
-    "word": "chronoformible",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated chronoformible this sprint."
+    "word": "control",
+    "definition": "the power to direct or manage",
+    "part_of_speech": "Noun",
+    "example": "She kept control of the class."
   },
   {
-    "word": "cryptomindizer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed cryptomindizer at length."
+    "word": "defend",
+    "definition": "to protect from attack or criticism",
+    "part_of_speech": "Verb",
+    "example": "Lawyers defend their clients."
   },
   {
-    "word": "cyberpulseness",
-    "definition": "to gen or refine something systematically.",
+    "word": "exist",
+    "definition": "to have real being",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseness the data before release."
+    "example": "Do ghosts exist?"
   },
   {
-    "word": "geothreadic",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "cheerful",
+    "definition": "noticeably happy and optimistic",
     "part_of_speech": "Adjective",
-    "example": "It was a geothreadic solution to a messy problem."
+    "example": "Her cheerful voice lifted the room."
   },
   {
-    "word": "hydronomyology",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded hydronomyology under pressure."
+    "word": "analyze",
+    "definition": "to examine carefully in detail",
+    "part_of_speech": "Verb",
+    "example": "Scientists analyze the results."
   },
   {
-    "word": "infrascopeer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "appeal",
+    "definition": "a quality that attracts interest",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeer."
+    "example": "The town has a lot of appeal."
   },
   {
-    "word": "microverseive",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "They microverseive their approach after feedback."
+    "word": "comment",
+    "definition": "a spoken or written remark",
+    "part_of_speech": "Noun",
+    "example": "Her comment was helpful."
   },
   {
-    "word": "neobyteism",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "frequent",
+    "definition": "happening often",
     "part_of_speech": "Adjective",
-    "example": "They chose a neobyteism design."
+    "example": "Frequent practice improves skill."
+  },
+  {
+    "word": "face",
+    "definition": "to confront or be directed toward",
+    "part_of_speech": "Verb",
+    "example": "We must face the challenge."
   },
   {
-    "word": "omnifieldable",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "rapidly",
+    "definition": "very quickly",
     "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldable and moved on."
+    "example": "Technology changes rapidly."
   },
   {
-    "word": "photomatrixized",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed photomatrixized at length."
+    "word": "argue",
+    "definition": "to present reasons for or against",
+    "part_of_speech": "Verb",
+    "example": "The lawyers will argue in court."
   },
   {
-    "word": "protovectorment",
-    "definition": "to gen or refine something systematically.",
+    "word": "complain",
+    "definition": "to express dissatisfaction",
     "part_of_speech": "Verb",
-    "example": "Try to protovectorment the process end-to-end."
+    "example": "Customers may complain about delays."
   },
   {
-    "word": "quantgraphal",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly quantgraphal."
+    "word": "adventure",
+    "definition": "an exciting or risky experience",
+    "part_of_speech": "Noun",
+    "example": "Camping alone felt like an adventure."
   },
   {
-    "word": "retrogenation",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "patiently",
+    "definition": "in a calm waiting manner",
     "part_of_speech": "Adverb",
-    "example": "She explained it retrogenation and moved on."
+    "example": "He patiently explained the steps again."
   },
   {
-    "word": "sociocrafting",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "defense",
+    "definition": "protection against attack",
     "part_of_speech": "Noun",
-    "example": "Her work shows real sociocrafting."
+    "example": "The castle's defense was strong."
   },
   {
-    "word": "technocodeous",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to technocodeous the process end-to-end."
-  },
-  {
-    "word": "thermosenseware",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "ready",
+    "definition": "prepared for action",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseware."
-  },
-  {
-    "word": "ultrasignalor",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalor and moved on."
+    "example": "We are ready to leave."
   },
   {
-    "word": "aerologicize",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real aerologicize."
+    "word": "judge",
+    "definition": "to form an opinion or decide officially",
+    "part_of_speech": "Verb",
+    "example": "Do not judge too quickly."
   },
   {
-    "word": "astrometryity",
-    "definition": "to gen or refine something systematically.",
+    "word": "enter",
+    "definition": "to go into",
     "part_of_speech": "Verb",
-    "example": "We will astrometryity the data before release."
+    "example": "Please enter through the side door."
   },
   {
-    "word": "biodynamicsible",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsible design."
+    "word": "approach",
+    "definition": "to move closer to",
+    "part_of_speech": "Verb",
+    "example": "A car began to approach the gate."
   },
   {
-    "word": "chronoformizer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformizer and moved on."
+    "word": "imagine",
+    "definition": "to form a picture in the mind",
+    "part_of_speech": "Verb",
+    "example": "Imagine life on another planet."
   },
   {
-    "word": "cryptomindness",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "border",
+    "definition": "the line separating two areas",
     "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindness."
+    "example": "They crossed the state border."
   },
   {
-    "word": "cyberpulseic",
-    "definition": "to gen or refine something systematically.",
+    "word": "advance",
+    "definition": "to move forward",
     "part_of_speech": "Verb",
-    "example": "They cyberpulseic their approach after feedback."
+    "example": "The team will advance to the next round."
   },
   {
-    "word": "geothreadology",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly geothreadology."
+    "word": "campaign",
+    "definition": "an organized effort to achieve a goal",
+    "part_of_speech": "Noun",
+    "example": "The school started a recycling campaign."
   },
   {
-    "word": "hydronomyer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "warmly",
+    "definition": "in a friendly manner",
     "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyer and moved on."
+    "example": "They warmly welcomed the guests."
+  },
+  {
+    "word": "finish",
+    "definition": "to complete",
+    "part_of_speech": "Verb",
+    "example": "I need to finish my homework."
   },
   {
-    "word": "infrascopeive",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "quality",
+    "definition": "a distinguishing feature or degree of excellence",
     "part_of_speech": "Noun",
-    "example": "They discussed infrascopeive at length."
+    "example": "This fabric has high quality."
+  },
+  {
+    "word": "accurate",
+    "definition": "free from error; correct",
+    "part_of_speech": "Adjective",
+    "example": "The map is accurate."
   },
   {
-    "word": "microverseism",
-    "definition": "to gen or refine something systematically.",
+    "word": "claim",
+    "definition": "to state as true",
     "part_of_speech": "Verb",
-    "example": "We will microverseism the data before release."
+    "example": "He claims he saw the comet."
   },
   {
-    "word": "neobyteable",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "dangerous",
+    "definition": "likely to cause harm",
     "part_of_speech": "Adjective",
-    "example": "It was a neobyteable solution to a messy problem."
+    "example": "The road becomes dangerous in ice."
   },
   {
-    "word": "omnifieldized",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated omnifieldized this sprint."
+    "word": "success",
+    "definition": "the achievement of a goal",
+    "part_of_speech": "Noun",
+    "example": "Hard work often leads to success."
   },
   {
-    "word": "photomatrixment",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "issue",
+    "definition": "an important topic or problem",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixment."
+    "example": "Housing is a major issue."
   },
   {
-    "word": "protovectoral",
-    "definition": "to gen or refine something systematically.",
+    "word": "collect",
+    "definition": "to gather together",
     "part_of_speech": "Verb",
-    "example": "They protovectoral their approach after feedback."
+    "example": "They collect stamps."
   },
   {
-    "word": "quantgraphation",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgraphation solution to a messy problem."
+    "word": "admit",
+    "definition": "to confess or allow to enter",
+    "part_of_speech": "Verb",
+    "example": "He had to admit the mistake."
   },
   {
-    "word": "retrogening",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogening under pressure."
+    "word": "fail",
+    "definition": "to not succeed",
+    "part_of_speech": "Verb",
+    "example": "Do not fail to lock the door."
   },
   {
-    "word": "sociocraftous",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "art",
+    "definition": "creative expression such as painting or music",
     "part_of_speech": "Noun",
-    "example": "They discussed sociocraftous at length."
+    "example": "She studies art after school."
+  },
+  {
+    "word": "know",
+    "definition": "to have understanding of",
+    "part_of_speech": "Verb",
+    "example": "I know the answer."
   },
   {
-    "word": "technocodeware",
-    "definition": "to gen or refine something systematically.",
+    "word": "celebrate",
+    "definition": "to honor with enjoyment or ceremony",
     "part_of_speech": "Verb",
-    "example": "They technocodeware their approach after feedback."
+    "example": "We celebrate birthdays with cake."
   },
   {
-    "word": "thermosenseor",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "patient",
+    "definition": "able to wait calmly",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseor."
+    "example": "The nurse was patient with everyone."
   },
   {
-    "word": "ultrasignalize",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalize and moved on."
+    "word": "absorb",
+    "definition": "to take in or soak up",
+    "part_of_speech": "Verb",
+    "example": "A sponge can absorb a lot of water."
   },
   {
-    "word": "aerologicity",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "people",
+    "definition": "human beings in general or a group",
     "part_of_speech": "Noun",
-    "example": "They discussed aerologicity at length."
+    "example": "People filled the square."
   },
   {
-    "word": "astrometryible",
-    "definition": "to gen or refine something systematically.",
+    "word": "demand",
+    "definition": "to ask for firmly",
     "part_of_speech": "Verb",
-    "example": "They astrometryible their approach after feedback."
+    "example": "Workers demand fair pay."
   },
   {
-    "word": "biodynamicsizer",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsizer design."
+    "word": "ignore",
+    "definition": "to pay no attention to",
+    "part_of_speech": "Verb",
+    "example": "Do not ignore warning signs."
   },
   {
-    "word": "chronoformness",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformness and moved on."
+    "word": "anxious",
+    "definition": "worried or uneasy",
+    "part_of_speech": "Adjective",
+    "example": "I felt anxious before the test."
   },
   {
-    "word": "cryptomindic",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed cryptomindic at length."
+    "word": "steady",
+    "definition": "firm and regular; not changing suddenly",
+    "part_of_speech": "Adjective",
+    "example": "Keep a steady pace."
   },
   {
-    "word": "cyberpulseology",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to cyberpulseology the process end-to-end."
+    "word": "character",
+    "definition": "the qualities that make a person distinct",
+    "part_of_speech": "Noun",
+    "example": "He showed strong character."
   },
   {
-    "word": "geothreader",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "modern",
+    "definition": "relating to the present time",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly geothreader."
+    "example": "The museum has a modern design."
   },
   {
-    "word": "hydronomyive",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyive this sprint."
+    "word": "discipline",
+    "definition": "training that develops control or order",
+    "part_of_speech": "Noun",
+    "example": "Daily study requires discipline."
   },
   {
-    "word": "infrascopeism",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "wisdom",
+    "definition": "good judgment based on knowledge and experience",
     "part_of_speech": "Noun",
-    "example": "They discussed infrascopeism at length."
+    "example": "Age sometimes brings wisdom."
   },
   {
-    "word": "microverseable",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to microverseable the process end-to-end."
+    "word": "happily",
+    "definition": "in a joyful manner",
+    "part_of_speech": "Adverb",
+    "example": "They happily celebrated the victory."
   },
   {
-    "word": "neobyteized",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "rare",
+    "definition": "not common",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly neobyteized."
-  },
-  {
-    "word": "omnifieldment",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated omnifieldment this sprint."
+    "example": "That bird is rare here."
   },
   {
-    "word": "photomatrixal",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "pattern",
+    "definition": "a repeated design or regular way things happen",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixal."
+    "example": "The tiles form a pattern."
   },
   {
-    "word": "protovectoration",
-    "definition": "to gen or refine something systematically.",
+    "word": "keep",
+    "definition": "to continue to have or hold",
     "part_of_speech": "Verb",
-    "example": "We will protovectoration the data before release."
-  },
-  {
-    "word": "quantgraphing",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgraphing solution to a messy problem."
+    "example": "Keep your receipt."
   },
   {
-    "word": "retrogenous",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it retrogenous and moved on."
+    "word": "fortune",
+    "definition": "great wealth or luck",
+    "part_of_speech": "Noun",
+    "example": "They made a fortune in business."
   },
   {
-    "word": "sociocraftware",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "improvement",
+    "definition": "the act of becoming better",
     "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftware."
+    "example": "The update was a real improvement."
   },
   {
-    "word": "technocodeor",
-    "definition": "to gen or refine something systematically.",
+    "word": "confess",
+    "definition": "to admit openly",
     "part_of_speech": "Verb",
-    "example": "Try to technocodeor the process end-to-end."
-  },
-  {
-    "word": "thermosenseize",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a thermosenseize solution to a messy problem."
+    "example": "He finally confessed the truth."
   },
   {
-    "word": "ultrasignality",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated ultrasignality this sprint."
+    "word": "compete",
+    "definition": "to try to win against others",
+    "part_of_speech": "Verb",
+    "example": "Athletes compete for medals."
   },
   {
-    "word": "aerologicible",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed aerologicible at length."
+    "word": "inspire",
+    "definition": "to fill with motivation",
+    "part_of_speech": "Verb",
+    "example": "Great stories inspire readers."
   },
   {
-    "word": "astrometryizer",
-    "definition": "to gen or refine something systematically.",
+    "word": "balance",
+    "definition": "to keep steady",
     "part_of_speech": "Verb",
-    "example": "We will astrometryizer the data before release."
+    "example": "He can balance on one foot."
   },
   {
-    "word": "biodynamicsness",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "narrow",
+    "definition": "not wide",
     "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsness design."
+    "example": "We crossed a narrow bridge."
   },
   {
-    "word": "chronoformic",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformic and moved on."
-  },
-  {
-    "word": "cryptomindology",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindology."
+    "word": "divide",
+    "definition": "to separate into parts",
+    "part_of_speech": "Verb",
+    "example": "The river divides the town."
   },
   {
-    "word": "cyberpulseer",
-    "definition": "to gen or refine something systematically.",
+    "word": "concentrate",
+    "definition": "to focus attention",
     "part_of_speech": "Verb",
-    "example": "We will cyberpulseer the data before release."
+    "example": "Please concentrate on the instructions."
   },
   {
-    "word": "geothreadive",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreadive design."
+    "word": "appreciate",
+    "definition": "to value highly",
+    "part_of_speech": "Verb",
+    "example": "I appreciate your help."
   },
   {
-    "word": "hydronomyism",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyism this sprint."
+    "word": "capture",
+    "definition": "to take control of",
+    "part_of_speech": "Verb",
+    "example": "The camera can capture fine detail."
   },
   {
-    "word": "infrascopeable",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "task",
+    "definition": "a piece of work to be done",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeable."
+    "example": "Cleaning the garage is my next task."
   },
   {
-    "word": "microverseized",
-    "definition": "to gen or refine something systematically.",
+    "word": "attempt",
+    "definition": "to try",
     "part_of_speech": "Verb",
-    "example": "We will microverseized the data before release."
+    "example": "She will attempt the puzzle again."
   },
   {
-    "word": "neobytement",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a neobytement solution to a messy problem."
+    "word": "leader",
+    "definition": "a person who guides others",
+    "part_of_speech": "Noun",
+    "example": "A good leader listens."
   },
   {
-    "word": "omnifieldal",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "rarely",
+    "definition": "not often",
     "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldal and moved on."
+    "example": "He rarely misses a deadline."
   },
   {
-    "word": "photomatrixation",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "degree",
+    "definition": "a level, amount, or academic award",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixation."
+    "example": "She earned a biology degree."
   },
   {
-    "word": "protovectoring",
-    "definition": "to gen or refine something systematically.",
+    "word": "focus",
+    "definition": "to direct attention",
     "part_of_speech": "Verb",
-    "example": "We will protovectoring the data before release."
+    "example": "Try to focus on one task."
   },
   {
-    "word": "quantgraphous",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphous design."
+    "word": "example",
+    "definition": "something that shows what a thing is like",
+    "part_of_speech": "Noun",
+    "example": "This chart is a good example."
+  },
+  {
+    "word": "result",
+    "definition": "the outcome or effect of an action",
+    "part_of_speech": "Noun",
+    "example": "The test result was clear."
   },
   {
-    "word": "retrogenware",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "wisely",
+    "definition": "with good judgment",
     "part_of_speech": "Adverb",
-    "example": "She explained it retrogenware and moved on."
+    "example": "Invest your money wisely."
   },
   {
-    "word": "sociocraftor",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "error",
+    "definition": "a mistake",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftor."
+    "example": "The report contained one error."
   },
   {
-    "word": "technocodeize",
-    "definition": "to gen or refine something systematically.",
+    "word": "avoid",
+    "definition": "to keep away from",
     "part_of_speech": "Verb",
-    "example": "They technocodeize their approach after feedback."
+    "example": "Drivers should avoid icy roads."
   },
   {
-    "word": "thermosenseity",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseity."
+    "word": "future",
+    "definition": "the time yet to come",
+    "part_of_speech": "Noun",
+    "example": "We worry about the future."
   },
   {
-    "word": "ultrasignalible",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalible and moved on."
+    "word": "breathe",
+    "definition": "to take air into the lungs",
+    "part_of_speech": "Verb",
+    "example": "Remember to breathe slowly."
   },
   {
-    "word": "aerologicizer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "truth",
+    "definition": "the quality of being true",
     "part_of_speech": "Noun",
-    "example": "They discussed aerologicizer at length."
+    "example": "The truth finally came out."
   },
   {
-    "word": "astrometryness",
-    "definition": "to gen or refine something systematically.",
+    "word": "connect",
+    "definition": "to join or link together",
     "part_of_speech": "Verb",
-    "example": "We will astrometryness the data before release."
+    "example": "This bridge connects the islands."
   },
   {
-    "word": "biodynamicsic",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsic design."
+    "word": "describe",
+    "definition": "to tell how something is",
+    "part_of_speech": "Verb",
+    "example": "Can you describe the suspect?"
   },
   {
-    "word": "chronoformology",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated chronoformology this sprint."
+    "word": "opinion",
+    "definition": "a personal belief or judgment",
+    "part_of_speech": "Noun",
+    "example": "In my opinion, it will rain."
   },
   {
-    "word": "cryptominder",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed cryptominder at length."
+    "word": "gentle",
+    "definition": "kind and mild in manner",
+    "part_of_speech": "Adjective",
+    "example": "Use a gentle touch."
   },
   {
-    "word": "cyberpulseive",
-    "definition": "to gen or refine something systematically.",
+    "word": "discover",
+    "definition": "to find for the first time",
     "part_of_speech": "Verb",
-    "example": "Try to cyberpulseive the process end-to-end."
+    "example": "Researchers discovered a new species."
   },
   {
-    "word": "geothreadism",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a geothreadism solution to a messy problem."
+    "word": "influence",
+    "definition": "to affect the actions or thoughts of",
+    "part_of_speech": "Verb",
+    "example": "Friends can influence choices."
   },
   {
-    "word": "hydronomyable",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded hydronomyable under pressure."
+    "word": "tender",
+    "definition": "gentle, soft, or easily hurt",
+    "part_of_speech": "Adjective",
+    "example": "The plant has tender leaves."
   },
   {
-    "word": "infrascopeized",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "The project relies on infrascopeized."
+    "word": "amuse",
+    "definition": "to entertain or make someone laugh",
+    "part_of_speech": "Verb",
+    "example": "The puppy's behavior will amuse the kids."
   },
   {
-    "word": "microversement",
-    "definition": "to gen or refine something systematically.",
+    "word": "enjoy",
+    "definition": "to take pleasure in",
     "part_of_speech": "Verb",
-    "example": "We will microversement the data before release."
+    "example": "I enjoy quiet mornings."
   },
   {
-    "word": "neobyteal",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a neobyteal solution to a messy problem."
+    "word": "injury",
+    "definition": "damage to the body",
+    "part_of_speech": "Noun",
+    "example": "He recovered from the injury."
   },
   {
-    "word": "omnifieldation",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "quickly",
+    "definition": "at high speed or with little delay",
     "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldation and moved on."
+    "example": "She quickly solved the puzzle."
   },
   {
-    "word": "photomatrixing",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed photomatrixing at length."
+    "word": "gather",
+    "definition": "to bring together",
+    "part_of_speech": "Verb",
+    "example": "Clouds gather before a storm."
   },
   {
-    "word": "protovectorous",
-    "definition": "to gen or refine something systematically.",
+    "word": "express",
+    "definition": "to show in words or actions",
     "part_of_speech": "Verb",
-    "example": "Try to protovectorous the process end-to-end."
+    "example": "He struggled to express gratitude."
   },
   {
-    "word": "quantgraphware",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly quantgraphware."
+    "word": "account",
+    "definition": "a report or record of events",
+    "part_of_speech": "Noun",
+    "example": "He gave an account of the meeting."
   },
   {
-    "word": "retrogenor",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenor under pressure."
+    "word": "grasp",
+    "definition": "to understand or seize firmly",
+    "part_of_speech": "Verb",
+    "example": "He could not grasp the concept at first."
   },
   {
-    "word": "sociocraftize",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "solution",
+    "definition": "an answer to a problem",
     "part_of_speech": "Noun",
-    "example": "The project relies on sociocraftize."
+    "example": "We finally found a solution."
   },
   {
-    "word": "technocodeity",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to technocodeity the process end-to-end."
+    "word": "sincere",
+    "definition": "genuine and honest in feeling",
+    "part_of_speech": "Adjective",
+    "example": "His apology sounded sincere."
   },
   {
-    "word": "thermosenseible",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "fierce",
+    "definition": "strong, intense, and aggressive",
     "part_of_speech": "Adjective",
-    "example": "They chose a thermosenseible design."
+    "example": "A fierce storm approached."
   },
   {
-    "word": "ultrasignalizer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalizer and moved on."
+    "word": "citizen",
+    "definition": "a legal member of a country or city",
+    "part_of_speech": "Noun",
+    "example": "Every citizen can vote."
   },
   {
-    "word": "aerologicness",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed aerologicness at length."
+    "word": "graceful",
+    "definition": "moving in a smooth and attractive way",
+    "part_of_speech": "Adjective",
+    "example": "The dancer looked graceful."
   },
   {
-    "word": "astrometryic",
-    "definition": "to gen or refine something systematically.",
+    "word": "arrange",
+    "definition": "to put in order or plan",
     "part_of_speech": "Verb",
-    "example": "They astrometryic their approach after feedback."
+    "example": "She arranged the books by color."
   },
   {
-    "word": "biodynamicsology",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsology design."
+    "word": "assure",
+    "definition": "to make certain or confident",
+    "part_of_speech": "Verb",
+    "example": "I assure you that it is safe."
   },
   {
-    "word": "chronoformer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformer and moved on."
+    "word": "apology",
+    "definition": "an expression of regret",
+    "part_of_speech": "Noun",
+    "example": "She offered an apology."
   },
   {
-    "word": "cryptomindive",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindive."
+    "word": "loudly",
+    "definition": "with a strong sound",
+    "part_of_speech": "Adverb",
+    "example": "The crowd loudly cheered."
   },
   {
-    "word": "cyberpulseism",
-    "definition": "to gen or refine something systematically.",
+    "word": "extend",
+    "definition": "to stretch out or offer",
     "part_of_speech": "Verb",
-    "example": "Try to cyberpulseism the process end-to-end."
+    "example": "They will extend the deadline."
   },
   {
-    "word": "geothreadable",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreadable design."
+    "word": "consequence",
+    "definition": "a result or effect",
+    "part_of_speech": "Noun",
+    "example": "Every action has a consequence."
   },
   {
-    "word": "hydronomyized",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded hydronomyized under pressure."
+    "word": "borrow",
+    "definition": "to take temporarily for use",
+    "part_of_speech": "Verb",
+    "example": "Can I borrow your pen?"
   },
   {
-    "word": "infrascopement",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "argument",
+    "definition": "a set of reasons supporting a view",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopement."
+    "example": "His argument was persuasive."
   },
   {
-    "word": "microverseal",
-    "definition": "to gen or refine something systematically.",
+    "word": "handle",
+    "definition": "to manage or touch carefully",
     "part_of_speech": "Verb",
-    "example": "We will microverseal the data before release."
+    "example": "Glass should be handled with care."
   },
   {
-    "word": "neobyteation",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "distant",
+    "definition": "far away in space or time",
     "part_of_speech": "Adjective",
-    "example": "It was a neobyteation solution to a messy problem."
-  },
-  {
-    "word": "omnifielding",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it omnifielding and moved on."
+    "example": "We could see distant hills."
   },
   {
-    "word": "photomatrixous",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed photomatrixous at length."
-  },
-  {
-    "word": "protovectorware",
-    "definition": "to gen or refine something systematically.",
+    "word": "greet",
+    "definition": "to welcome",
     "part_of_speech": "Verb",
-    "example": "Try to protovectorware the process end-to-end."
+    "example": "They greeted us warmly."
   },
   {
-    "word": "quantgraphor",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgraphor solution to a messy problem."
+    "word": "deserve",
+    "definition": "to be worthy of",
+    "part_of_speech": "Verb",
+    "example": "You deserve a break."
   },
   {
-    "word": "retrogenize",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenize under pressure."
+    "word": "impact",
+    "definition": "a strong effect or influence",
+    "part_of_speech": "Noun",
+    "example": "The speech had a big impact."
   },
   {
-    "word": "sociocraftity",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "memory",
+    "definition": "the ability to remember or something remembered",
     "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftity."
+    "example": "That song brought back a memory."
   },
   {
-    "word": "technocodeible",
-    "definition": "to gen or refine something systematically.",
+    "word": "convince",
+    "definition": "to persuade",
     "part_of_speech": "Verb",
-    "example": "Try to technocodeible the process end-to-end."
+    "example": "The evidence convinced the jury."
   },
   {
-    "word": "thermosenseizer",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseizer."
+    "word": "contrast",
+    "definition": "a noticeable difference",
+    "part_of_speech": "Noun",
+    "example": "The contrast between the colors is sharp."
   },
   {
-    "word": "ultrasignalness",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "slowly",
+    "definition": "at a low speed",
     "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalness and moved on."
-  },
-  {
-    "word": "aerologicic",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real aerologicic."
+    "example": "The turtle moved slowly."
   },
   {
-    "word": "astrometryology",
-    "definition": "to gen or refine something systematically.",
+    "word": "escape",
+    "definition": "to get free from",
     "part_of_speech": "Verb",
-    "example": "Try to astrometryology the process end-to-end."
+    "example": "The bird managed to escape."
   },
   {
-    "word": "biodynamicser",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicser design."
+    "word": "wealth",
+    "definition": "a large amount of money or valuable possessions",
+    "part_of_speech": "Noun",
+    "example": "The family had little wealth."
   },
   {
-    "word": "chronoformive",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformive and moved on."
+    "word": "abandon",
+    "definition": "to leave behind completely",
+    "part_of_speech": "Verb",
+    "example": "They had to abandon the plan after the storm."
   },
   {
-    "word": "cryptomindism",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindism."
+    "word": "feed",
+    "definition": "to give food to",
+    "part_of_speech": "Verb",
+    "example": "Please feed the cat."
   },
   {
-    "word": "cyberpulseable",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "They cyberpulseable their approach after feedback."
+    "word": "method",
+    "definition": "a way of doing something",
+    "part_of_speech": "Noun",
+    "example": "This method is faster."
   },
   {
-    "word": "geothreadized",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "calm",
+    "definition": "peaceful and not excited",
     "part_of_speech": "Adjective",
-    "example": "They chose a geothreadized design."
+    "example": "The sea was calm at dawn."
   },
   {
-    "word": "hydronomyment",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it hydronomyment and moved on."
+    "word": "cause",
+    "definition": "the reason something happens",
+    "part_of_speech": "Noun",
+    "example": "No clear cause was found."
   },
   {
-    "word": "infrascopeal",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "support",
+    "definition": "help or encouragement",
     "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeal."
+    "example": "Thank you for your support."
   },
   {
-    "word": "microverseation",
-    "definition": "to gen or refine something systematically.",
+    "word": "believe",
+    "definition": "to accept as true",
     "part_of_speech": "Verb",
-    "example": "We will microverseation the data before release."
+    "example": "I believe your story."
   },
   {
-    "word": "neobyteing",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "unique",
+    "definition": "being the only one of its kind",
     "part_of_speech": "Adjective",
-    "example": "It was a neobyteing solution to a messy problem."
+    "example": "Every fingerprint is unique."
   },
   {
-    "word": "omnifieldous",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded omnifieldous under pressure."
+    "word": "carry",
+    "definition": "to hold and move something",
+    "part_of_speech": "Verb",
+    "example": "She carried the box upstairs."
   },
   {
-    "word": "photomatrixware",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "culture",
+    "definition": "the shared customs and values of a group",
     "part_of_speech": "Noun",
-    "example": "The project relies on photomatrixware."
+    "example": "Food reflects culture."
   },
   {
-    "word": "protovectoror",
-    "definition": "to gen or refine something systematically.",
+    "word": "encourage",
+    "definition": "to give support or confidence",
     "part_of_speech": "Verb",
-    "example": "Try to protovectoror the process end-to-end."
+    "example": "Coaches encourage their players."
   },
   {
-    "word": "quantgraphize",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgraphize solution to a messy problem."
+    "word": "advise",
+    "definition": "to give guidance or recommendations",
+    "part_of_speech": "Verb",
+    "example": "Teachers advise students about classes."
   },
   {
-    "word": "retrogenity",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded retrogenity under pressure."
+    "word": "afford",
+    "definition": "to have enough money or time for",
+    "part_of_speech": "Verb",
+    "example": "He cannot afford a new car right now."
   },
   {
-    "word": "sociocraftible",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real sociocraftible."
+    "word": "politely",
+    "definition": "with good manners",
+    "part_of_speech": "Adverb",
+    "example": "She politely declined the offer."
   },
   {
-    "word": "technocodeizer",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will technocodeizer the data before release."
+    "word": "contest",
+    "definition": "a competition",
+    "part_of_speech": "Noun",
+    "example": "He entered the spelling contest."
   },
   {
-    "word": "thermosenseness",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseness."
+    "word": "comfort",
+    "definition": "a state of physical ease",
+    "part_of_speech": "Noun",
+    "example": "Soft blankets provide comfort."
   },
   {
-    "word": "ultrasignalic",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalic and moved on."
+    "word": "adapt",
+    "definition": "to adjust to new conditions",
+    "part_of_speech": "Verb",
+    "example": "Animals adapt to their environments."
   },
   {
-    "word": "aerologicology",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "The project relies on aerologicology."
+    "word": "include",
+    "definition": "to contain as part of a whole",
+    "part_of_speech": "Verb",
+    "example": "The fee includes breakfast."
   },
   {
-    "word": "astrometryer",
-    "definition": "to gen or refine something systematically.",
+    "word": "guard",
+    "definition": "to protect or watch over",
     "part_of_speech": "Verb",
-    "example": "Try to astrometryer the process end-to-end."
+    "example": "Soldiers guard the entrance."
   },
   {
-    "word": "biodynamicsive",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "ancient",
+    "definition": "very old",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly biodynamicsive."
-  },
-  {
-    "word": "chronoformism",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "He responded chronoformism under pressure."
+    "example": "They explored ancient ruins."
   },
   {
-    "word": "cryptomindable",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "justice",
+    "definition": "fair treatment or behavior",
     "part_of_speech": "Noun",
-    "example": "The project relies on cryptomindable."
+    "example": "The case became a fight for justice."
   },
   {
-    "word": "cyberpulseized",
-    "definition": "to gen or refine something systematically.",
+    "word": "admire",
+    "definition": "to regard with respect or approval",
     "part_of_speech": "Verb",
-    "example": "They cyberpulseized their approach after feedback."
-  },
-  {
-    "word": "geothreadment",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a geothreadment design."
+    "example": "I admire her patience."
   },
   {
-    "word": "hydronomyal",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyal this sprint."
+    "word": "opportunity",
+    "definition": "a favorable chance",
+    "part_of_speech": "Noun",
+    "example": "This internship is a great opportunity."
   },
   {
-    "word": "infrascopeation",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "spirit",
+    "definition": "the nonphysical part of a person or the mood of a group",
     "part_of_speech": "Noun",
-    "example": "They discussed infrascopeation at length."
+    "example": "The team showed strong spirit."
   },
   {
-    "word": "microverseing",
-    "definition": "to gen or refine something systematically.",
+    "word": "care",
+    "definition": "to feel concern or interest",
     "part_of_speech": "Verb",
-    "example": "They microverseing their approach after feedback."
+    "example": "I care about the outcome."
   },
   {
-    "word": "neobyteous",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly neobyteous."
+    "word": "fact",
+    "definition": "something known to be true",
+    "part_of_speech": "Noun",
+    "example": "That statement is a fact."
   },
   {
-    "word": "omnifieldware",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldware and moved on."
+    "word": "govern",
+    "definition": "to control or rule",
+    "part_of_speech": "Verb",
+    "example": "Laws govern public behavior."
   },
   {
-    "word": "photomatrixor",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "depth",
+    "definition": "the distance downward or inward",
     "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixor."
+    "example": "The lake's depth surprised us."
   },
   {
-    "word": "protovectorize",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "Try to protovectorize the process end-to-end."
+    "word": "safely",
+    "definition": "without danger",
+    "part_of_speech": "Adverb",
+    "example": "The hikers returned safely."
   },
   {
-    "word": "quantgraphity",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "It was a quantgraphity solution to a messy problem."
+    "word": "distance",
+    "definition": "the amount of space between things",
+    "part_of_speech": "Noun",
+    "example": "The distance was too far to walk."
   },
   {
-    "word": "retrogenible",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "neatly",
+    "definition": "in a tidy way",
     "part_of_speech": "Adverb",
-    "example": "She explained it retrogenible and moved on."
+    "example": "She neatly organized the notes."
   },
   {
-    "word": "sociocraftizer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "career",
+    "definition": "a long-term occupation or profession",
     "part_of_speech": "Noun",
-    "example": "They discussed sociocraftizer at length."
+    "example": "She wants a career in medicine."
   },
   {
-    "word": "technocodeness",
-    "definition": "to gen or refine something systematically.",
+    "word": "improve",
+    "definition": "to make better",
     "part_of_speech": "Verb",
-    "example": "They technocodeness their approach after feedback."
+    "example": "Practice will improve your swing."
   },
   {
-    "word": "thermosenseic",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a thermosenseic design."
+    "word": "wonder",
+    "definition": "a feeling of surprise and admiration",
+    "part_of_speech": "Noun",
+    "example": "The child stared in wonder."
   },
   {
-    "word": "ultrasignalology",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignalology and moved on."
+    "word": "loss",
+    "definition": "the state of no longer having something",
+    "part_of_speech": "Noun",
+    "example": "The team felt the loss deeply."
   },
   {
-    "word": "aerologicer",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "They discussed aerologicer at length."
+    "word": "quietly",
+    "definition": "with little or no noise",
+    "part_of_speech": "Adverb",
+    "example": "Please close the door quietly."
   },
   {
-    "word": "astrometryive",
-    "definition": "to gen or refine something systematically.",
+    "word": "harm",
+    "definition": "to cause damage or injury",
     "part_of_speech": "Verb",
-    "example": "Try to astrometryive the process end-to-end."
+    "example": "These chemicals can harm fish."
   },
   {
-    "word": "biodynamicsism",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "constant",
+    "definition": "continuing without much change",
     "part_of_speech": "Adjective",
-    "example": "It was a biodynamicsism solution to a messy problem."
-  },
-  {
-    "word": "chronoformable",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it chronoformable and moved on."
+    "example": "They felt constant pressure."
   },
   {
-    "word": "cryptomindized",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "difficulty",
+    "definition": "a problem or hardship",
     "part_of_speech": "Noun",
-    "example": "They discussed cryptomindized at length."
+    "example": "They had difficulty opening the jar."
   },
   {
-    "word": "cyberpulsement",
-    "definition": "to gen or refine something systematically.",
+    "word": "endure",
+    "definition": "to suffer patiently or last through",
     "part_of_speech": "Verb",
-    "example": "Try to cyberpulsement the process end-to-end."
+    "example": "They endured a harsh winter."
   },
   {
-    "word": "geothreadal",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "awkward",
+    "definition": "clumsy or uncomfortable",
     "part_of_speech": "Adjective",
-    "example": "They chose a geothreadal design."
+    "example": "It was an awkward silence."
   },
   {
-    "word": "hydronomyation",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated hydronomyation this sprint."
-  },
-  {
-    "word": "infrascopeing",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
-    "part_of_speech": "Noun",
-    "example": "Her work shows real infrascopeing."
+    "word": "apologize",
+    "definition": "to express regret for a wrong",
+    "part_of_speech": "Verb",
+    "example": "He called to apologize."
   },
   {
-    "word": "microverseous",
-    "definition": "to gen or refine something systematically.",
+    "word": "intend",
+    "definition": "to plan or mean to do",
     "part_of_speech": "Verb",
-    "example": "We will microverseous the data before release."
+    "example": "I intend to finish tonight."
   },
   {
-    "word": "neobyteware",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a neobyteware design."
+    "word": "moment",
+    "definition": "a very short period of time",
+    "part_of_speech": "Noun",
+    "example": "Wait a moment."
   },
   {
-    "word": "omnifieldor",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
+    "word": "seriously",
+    "definition": "with earnest intent",
     "part_of_speech": "Adverb",
-    "example": "She explained it omnifieldor and moved on."
+    "example": "Please take this matter seriously."
   },
   {
-    "word": "photomatrixize",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "peace",
+    "definition": "freedom from conflict or disturbance",
     "part_of_speech": "Noun",
-    "example": "Her work shows real photomatrixize."
+    "example": "The village longed for peace."
   },
   {
-    "word": "protovectority",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will protovectority the data before release."
+    "word": "victory",
+    "definition": "success in a contest or struggle",
+    "part_of_speech": "Noun",
+    "example": "The crowd celebrated the victory."
   },
   {
-    "word": "quantgraphible",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a quantgraphible design."
+    "word": "agency",
+    "definition": "an organization that provides a service",
+    "part_of_speech": "Noun",
+    "example": "The travel agency booked our flights."
   },
   {
-    "word": "retrogenizer",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it retrogenizer and moved on."
+    "word": "difference",
+    "definition": "the state of not being the same",
+    "part_of_speech": "Noun",
+    "example": "There is a key difference here."
   },
   {
-    "word": "sociocraftness",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "detail",
+    "definition": "a small individual feature",
     "part_of_speech": "Noun",
-    "example": "They discussed sociocraftness at length."
+    "example": "Please check every detail."
   },
   {
-    "word": "technocodeic",
-    "definition": "to gen or refine something systematically.",
-    "part_of_speech": "Verb",
-    "example": "We will technocodeic the data before release."
+    "word": "tradition",
+    "definition": "a custom handed down over time",
+    "part_of_speech": "Noun",
+    "example": "Baking together is a family tradition."
+  },
+  {
+    "word": "growth",
+    "definition": "the process of increasing or developing",
+    "part_of_speech": "Noun",
+    "example": "The plant showed rapid growth."
   },
   {
-    "word": "thermosenseology",
-    "definition": "characterized by byte; organized and effective.",
+    "word": "active",
+    "definition": "engaged in action or movement",
     "part_of_speech": "Adjective",
-    "example": "His explanation was surprisingly thermosenseology."
+    "example": "He leads an active life."
   },
   {
-    "word": "ultrasignaler",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "She explained it ultrasignaler and moved on."
+    "word": "audience",
+    "definition": "the people watching or listening",
+    "part_of_speech": "Noun",
+    "example": "The audience applauded loudly."
+  },
+  {
+    "word": "freedom",
+    "definition": "the power to act without unnecessary control",
+    "part_of_speech": "Noun",
+    "example": "Freedom matters deeply."
   },
   {
-    "word": "aerologicive",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "confidence",
+    "definition": "belief in oneself or something",
     "part_of_speech": "Noun",
-    "example": "They discussed aerologicive at length."
+    "example": "Practice builds confidence."
   },
   {
-    "word": "astrometryism",
-    "definition": "to gen or refine something systematically.",
+    "word": "attract",
+    "definition": "to draw interest or attention",
     "part_of_speech": "Verb",
-    "example": "We will astrometryism the data before release."
+    "example": "Bright lights attract insects."
   },
   {
-    "word": "biodynamicsable",
-    "definition": "characterized by byte; organized and effective.",
-    "part_of_speech": "Adjective",
-    "example": "They chose a biodynamicsable design."
+    "word": "guess",
+    "definition": "to estimate without certainty",
+    "part_of_speech": "Verb",
+    "example": "I can only guess the answer."
   },
   {
-    "word": "chronoformized",
-    "definition": "in a way that is pulse-driven; with clear intent and structure.",
-    "part_of_speech": "Adverb",
-    "example": "They iterated chronoformized this sprint."
+    "word": "kind",
+    "definition": "showing care and concern",
+    "part_of_speech": "Adjective",
+    "example": "That was a kind gesture."
   },
   {
-    "word": "cryptomindment",
-    "definition": "the practice or concept of logic applied to modern systems or ideas.",
+    "word": "belief",
+    "definition": "something accepted as true",
     "part_of_speech": "Noun",
-    "example": "Her work shows real cryptomindment."
+    "example": "That belief is common."
+  },
+  {
+    "word": "warmly",
+    "definition": "in a friendly or affectionate manner",
+    "part_of_speech": "Adverb",
+    "example": "They welcomed us warmly."
   },
   {
-    "word": "cyberpulseal",
-    "definition": "to gen or refine something systematically.",
+    "word": "depend",
+    "definition": "to rely on",
     "part_of_speech": "Verb",
-    "example": "They cyberpulseal their approach after feedback."
+    "example": "Plants depend on sunlight."
   }
 ];
 
 app.get('/day', (req, res) => {
-    const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
-    const idx = Math.min(Math.max(dayOfYear, 1), 366) - 1; // Subtract one to make it an index
+  const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+  const idx = Math.min(Math.max(dayOfYear, 1), 366) - 1;
 
-    res.status(200).send(WORDS[idx]);
+  res.status(200).send(WORDS[idx]);
 });
 
 app.get('/random', (req, res) => {
   const num = Math.floor(Math.random() * 366);
 
   res.status(200).send(WORDS[num]);
-})
+});
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
